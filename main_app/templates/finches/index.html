@@ -4,15 +4,17 @@
 
 {% for fin in finch %}
 <div class="card">
-  <div class="card-content">
-    <span class="card-title">{{ fin.name }}</span>
-    <p>Breed: {{ fin.family }}</p>
-    <p>Description: {{ fin.description }}</p>
-    {% if fin.age > 0 %}
-    <p>Age: {{ fin.age }}</p>
-    {% else %}
-    <p>Age: Finches</p>
-    {% endif %}
-  </div>
+  <a href="/finch/{{ fin.id }}">
+    <div class="card-content">
+      <span class="card-title">{{ fin.name }}</span>
+      <p>Family: {{ fin.family }}</p>
+      <p>Description: {{ fin.description }}</p>
+      {% if fin.age > 0 %}
+      <p>Age: {{ fin.age }}</p>
+      {% else %}
+      <p>Max-Age: Finches</p>
+      {% endif %}
+    </div>
+  </a>
 </div>
 {% endfor %} {% endblock %}
